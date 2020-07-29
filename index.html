@@ -65,8 +65,8 @@
 
                      <div class="col-md-4 status">
                         <h5 id="total-price" >$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5 id="tax-amount">$0</h5>
+                        <h5 id="grand-total">$1,278</h5>
                      </div>
                   </div>
                </div>
@@ -110,6 +110,11 @@
 
          const totalPrice = caseCount * 59 + phoneCount *1219;
          document.getElementById ('total-price').innerText = '$' + totalPrice;
+         const taxCount = Math.round (totalPrice*0.1);
+         document.getElementById('tax-amount').innerText = '$' + taxCount;
+
+         grandTotal = totalPrice + taxCount;
+         document.getElementById('grand-total').innerText ='$' + grandTotal;
 
       }
       function getInputValue (product){
